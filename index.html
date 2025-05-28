@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Language Selector - WordPress Test</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Roboto", Arial, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px 20px 20px;
+      }
+      .selector-box {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        padding: 32px 24px;
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 32px;
+        animation: fadeIn 1s;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .lang-btns {
+        display: flex;
+        justify-content: space-around;
+        margin: 24px 0;
+        gap: 16px;
+      }
+      .lang-btn {
+        flex: 1;
+        background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        padding: 18px 0;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+        box-shadow: 0 2px 8px rgba(78, 84, 200, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .lang-btn:hover,
+      .lang-btn:focus {
+        background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);
+        transform: translateY(-2px) scale(1.03);
+        outline: none;
+      }
+      .lang-icon {
+        font-size: 1.5em;
+      }
+      .info-section {
+        margin-top: 16px;
+        color: #333;
+        font-size: 1rem;
+        background: #f8fafc;
+        border-radius: 10px;
+        padding: 18px 14px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+      }
+      footer {
+        text-align: center;
+        padding: 18px 10px 10px 10px;
+        font-size: 0.95rem;
+        color: #888;
+        letter-spacing: 0.02em;
+      }
+      @media (max-width: 600px) {
+        .selector-box {
+          padding: 20px 8px;
+          max-width: 98vw;
+        }
+        .lang-btn {
+          font-size: 1rem;
+          padding: 14px 0;
+        }
+        .info-section {
+          font-size: 0.95rem;
+          padding: 12px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="selector-box">
+        <h2 style="margin-bottom: 18px">Select Your Language</h2>
+        <div class="lang-btns">
+          <button class="lang-btn" onclick="window.location.href='./en/'">
+            <span class="lang-icon" aria-hidden="true">🇬🇧</span> English
+          </button>
+          <button class="lang-btn" onclick="window.location.href='./fa/'">
+            <span class="lang-icon" aria-hidden="true">🇮🇷</span> فارسی
+          </button>
+        </div>
+        <div class="info-section">
+          <strong>Notice:</strong> The WordPress installations in these folders
+          are for <b>test, development, and non-commercial purposes only</b>.
+          <br />
+          <p>
+            If you don't have a mouse, press the <strong>Tab</strong> key to
+            navigate to one of the language buttons, then press
+            <strong>Enter</strong> to select your preferred language.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      2025 &copy; Developed by <a href="https://www.shafiei.dev">Shafiei</a>
+    </footer>
+    <script>
+      // Optional: Add keyboard accessibility for language selection
+      // This ensures that users who rely on keyboards or assistive technologies
+      // can navigate and select their preferred language without using a mouse.
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.addEventListener("keyup", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            btn.click();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

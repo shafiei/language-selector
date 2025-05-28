@@ -4,7 +4,7 @@ A simple, responsive HTML page that allows users to choose between English and P
 
 ## 🌐 Live Demo
 
-[View the live page](https://your-username.github.io/language-selector/)
+[View the live page](https://shafiei.github.io/language-selector/)
 
 ## 🚀 Features
 
